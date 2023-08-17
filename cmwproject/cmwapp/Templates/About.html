@@ -1,0 +1,230 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+ </head>
+  <body>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+<style>
+/*here footer starts*/
+*{
+  margin: 0;
+  padding: 0;
+}
+.orange {
+  color: #ff7a01;
+}
+
+.form-container {
+  max-width: 700px;
+  margin: 30px;
+  background-color: #001925;
+  padding: 30px;
+  border-left: 5px solid #ff7a01;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+}
+
+.heading {
+  display: block;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.form-container .form .input {
+  color: #87a4b6;
+  width: 100%;
+  background-color: #002733;
+  border: none;
+  outline: none;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  border-left: 1px solid transparent;
+}
+
+.form-container .form .input:focus {
+  border-left: 5px solid #ff7a01;
+}
+
+.form-container .form .textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: #013747;
+  color: #ff7a01;
+  font-weight: bold;
+  resize: none;
+  max-height: 150px;
+  margin-bottom: 20px;
+  border-left: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-container .form .textarea:focus {
+  border-left: 5px solid #ff7a01;
+}
+
+.form-container .form .button-container {
+  display: flex;
+  gap: 10px;
+}
+
+.form-container .form .button-container .send-button {
+  flex-basis: 70%;
+  background: #ff7a01;
+  padding: 10px;
+  color: #001925;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-container .form .button-container .send-button:hover {
+  background: transparent;
+  border: 1px solid #ff7a01;
+  color: #ff7a01;
+}
+
+.form-container .form .button-container .reset-button-container {
+  filter: drop-shadow(1px 1px 0px #ff7a01);
+  flex-basis: 30%;
+}
+
+.form-container .form .button-container .reset-button-container .reset-button {
+  position: relative;
+  text-align: center;
+  padding: 10px;
+  color: #ff7a01;
+  font-weight: bold;
+  background: #001925;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  transition: all 0.2s ease-in-out;
+}
+
+.form-container .form .button-container .reset-button-container .reset-button:hover {
+  background: #ff7a01;
+  color: #001925;
+}
+.container-xxl
+{
+  background-image: url(/static/image/blog28.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height:100%;
+}
+.container-fluid-x{
+  background: #001925;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  color:white;
+  text-align: center;
+}
+.container{
+  display: block;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+/*here footer ends*/  
+  </style>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'index' %}" style="color: #ff7a01;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}" style="color: #ff7a01;">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}" style="color: #ff7a01;">Contact</a>
+          </li> <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}" style="color: #ff7a01;">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'blog' %}" style="color:#ff7a01;">Blog</a>
+          </li>
+        </ul>
+        <a class="navbar-brand" href="{% url 'index' %}" style="color: #ff7a01;">
+          <img width="64" height="64" src="https://img.icons8.com/external-filled-line-gradient-andi-nur-abdillah/64/external-blog-online-learning-filled-line-gradient-filled-line-gradient-andi-nur-abdillah.png" alt="external-blog-online-learning-filled-line-gradient-filled-line-gradient-andi-nur-abdillah"/>
+        </a>
+      </div>
+    </div>
+  </nav>
+  <!--navigation bar starts here-->
+  <!--navigation bar endss here-->
+<!--<img src="{% static 'image/bg.jpg' %}" class="d-block w-100" alt="...">-->
+    <div class="container-xxl">
+      <center><h1 style="color: #ff7a01;padding-top: 80px;">About Us</h1></center>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> </div>
+    <div class="container-fluid-x">
+      <div class="container">
+        <h2 style="color:#ff7a01">What Is a Content Management System (CMS)?</h2>
+        <p>A content management system (CMS) is software that helps users create, manage, and modify content on a website without the need for technical knowledge. In other words, a CMS lets you build a website without needing to write code from scratch (or even know how to code at all).</p>
+      </div>
+    </div>
+      <div class="container-fluid" style="background-color:black;color: white;">
+        <div class="row">
+          <div class="col" style="text-align: center;">
+            <br><br><br><br><br>
+            <p>123 Main street,city,country</p>
+            <p>phone: +123 456 7890</p>
+            <p>Email:xyz@gmail.com</p>
+          </div>
+          <div class="col order-5">    
+            <div class="form-container">
+              <div class="form"> 
+                  <span class="heading">Get in touch</span>
+                  <form class="form" method="POST" action="{% url 'foo' %}">
+                    {% csrf_token %}
+           <input placeholder="Name" type="text" class="input" name="name">
+           <input placeholder="Email" id="mail" type="email" class="input" name="email">
+           <textarea placeholder="Say Hello" rows="10" cols="30" id="message" class="textarea" name="hello"></textarea>
+           <div class="button-container">
+           <div>
+            <button class="send-button" type="submit" href="#" name="btn_submit">Send</button>
+           </div>
+           <div>
+              <div class="reset-button-container">
+                <button  class="reset-button" type="Reset" href="#" id="reset-btn" name="reset-button">Reset</button>
+              </div>
+            </div>
+          </div>
+                 </form>
+        </div>
+        </div>
+            </div>
+            
+          </div>
+        <p>2023 Inc, All rights are reserved.</p>
+      </div>
+      </div>
+</body>
+</html>

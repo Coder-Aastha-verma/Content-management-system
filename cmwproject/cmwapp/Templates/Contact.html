@@ -1,0 +1,435 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tiny.cloud/1/qi60purvnldneg6geq9zxglz75yf6g8j0cmcvucavxynu59y/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </head>
+<body>
+  <style>
+    /*footer*/
+ .orange {
+  color: #ff7a01;
+ }
+.form-container {
+  max-width: 700px;
+  margin: 30px;
+  background-color: #001925;
+  padding: 30px;
+  border-left: 5px solid #ff7a01;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+}
+
+.heading {
+  display: block;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.form-container .form .input {
+  color: #87a4b6;
+  width: 100%;
+  background-color: #002733;
+  border: none;
+  outline: none;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  border-left: 1px solid transparent;
+}
+
+.form-container .form .input:focus {
+  border-left: 5px solid #ff7a01;
+}
+
+.form-container .form .textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: #013747;
+  color: #ff7a01;
+  font-weight: bold;
+  resize: none;
+  max-height: 150px;
+  margin-bottom: 20px;
+  border-left: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-container .form .textarea:focus {
+  border-left: 5px solid #ff7a01;
+}
+
+.form-container .form .button-container {
+  display: flex;
+  gap: 10px;
+}
+
+.form-container .form .button-container .send-button {
+  flex-basis: 70%;
+  background: #ff7a01;
+  padding: 10px;
+  color: #001925;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-container .form .button-container .send-button:hover {
+  background: transparent;
+  border: 1px solid #ff7a01;
+  color: #ff7a01;
+}
+
+.form-container .form .button-container .reset-button-container {
+  filter: drop-shadow(1px 1px 0px #ff7a01);
+  flex-basis: 30%;
+}
+
+.form-container .form .button-container .reset-button-container .reset-button {
+  position: relative;
+  text-align: center;
+  padding: 10px;
+  color: #ff7a01;
+  font-weight: bold;
+  background: #001925;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  transition: all 0.2s ease-in-out;
+}
+
+.form-container .form .button-container .reset-button-container .reset-button:hover {
+  background: #ff7a01;
+  color: #001925;
+}
+.container-fluid-l{
+  background-image: url(/static/image/blog23.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height:100%;
+}
+.container{
+  color: #ff7a01;
+  padding-bottom:50px;
+}
+.container h1{
+  padding-top: 50px;
+}
+/*footer*/
+/*contact form starts here*/
+.formx{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 350px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.message {
+  color: #ff7a01;
+  font-size: 14px;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
+
+.formx label {
+  position: relative;
+}
+
+.formx label .input {
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+  outline: 0;
+  border: 1px solid #ff7a01;
+  border-radius: 5px;
+}
+
+.formx label .input + span {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: grey;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.formx label .input:placeholder-shown + span {
+  top: 15px;
+  font-size: 0.9em;
+}
+
+.formx label .input:focus + span,.formx label .input:valid + span {
+  top: 30px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.formx label .input:valid + span {
+  color: green;
+}
+
+.input01 {
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+  outline: 0;
+  border: 1px solid #ff7a01;
+  border-radius: 5px;
+}
+
+.formx label .input01 + span {
+  position: absolute;
+  left: 10px;
+  top: 50px;
+  color: grey;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.formx label .input01:placeholder-shown + span {
+  top: 40px;
+  font-size: 0.9em;
+}
+
+.formx label .input01:focus + span,.formx label .input01:valid + span {
+  top: 50px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.formx label .input01:valid + span {
+  color: green;
+}
+
+.fancy {
+  background-color: transparent;
+  border: 2px solid #ff7a01;
+  border-radius: 0px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 390;
+  letter-spacing: 2px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 8px 30px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  font-size: 13px;
+}
+
+.fancy::before {
+  content: " ";
+  width: 1.7rem;
+  height: 2px;
+  background: #ff7a01;
+  top: 50%;
+  left: 1.5em;
+  position: absolute;
+  transform: translateY(-50%);
+  transform: translateX(230%);
+  transform-origin: center;
+  transition: background 0.3s linear, width 0.3s linear;
+}
+
+.fancy .text {
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  padding-left: 2em;
+  display: block;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  text-transform: lowercase;
+  text-decoration: none;
+  color: #ff7a01;
+  transform: translateX(30%);
+}
+
+.fancy .top-key {
+  height: 2px;
+  width: 1.5625rem;
+  top: -2px;
+  left: 0.625rem;
+  position: absolute;
+  background: white;
+  transition: width 0.5s ease-out, left 0.3s ease-out;
+}
+
+.fancy .bottom-key-1 {
+  height: 2px;
+  width: 1.5625rem;
+  right: 1.875rem;
+  bottom: -2px;
+  position: absolute;
+  background: white;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy .bottom-key-2 {
+  height: 2px;
+  width: 0.625rem;
+  right: 0.625rem;
+  bottom: -2px;
+  position: absolute;
+  background: white;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy:hover {
+  color: white;
+  background:#ff7a01;
+}
+
+.fancy:hover::before {
+  width: 1.5rem;
+  background: white;
+}
+
+.fancy:hover .text {
+  color: white;
+  padding-left: 1.5em;
+}
+
+.fancy:hover .top-key {
+  left: -2px;
+  width: 0px;
+}
+
+.fancy:hover .bottom-key-1,
+ .fancy:hover .bottom-key-2 {
+  right: 0;
+  width: 0;
+}
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!--navigation bar starts here-->
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'index' %}" style="color: #ff7a01;">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}" style="color: #ff7a01;">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contact' %}" style="color:#ff7a01;">Contact</a>
+        </li> <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}" style="color: #ff7a01;">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'blog' %}" style="color:#ff7a01;">Blog</a>
+        </li>
+      </ul>
+      <a class="navbar-brand" href="{% url 'index' %}" style="color: #ff7a01;">
+      <img width="64" height="64" src="https://img.icons8.com/external-filled-line-gradient-andi-nur-abdillah/64/external-blog-online-learning-filled-line-gradient-filled-line-gradient-andi-nur-abdillah.png" alt="external-blog-online-learning-filled-line-gradient-filled-line-gradient-andi-nur-abdillah"/>
+      </a>
+    </div>
+  </div>
+</nav>
+<!--navigation bar endss here-->
+ <div class="container-fluid-l" style="text-align: center;">
+<div class="container">
+  <h1>Let's Talk</h1>
+  <center>
+  <form class="formx" method="POST" action="{% url 'contactreg' %}">
+    {% csrf_token %}
+    <div class="flex">
+        <label>
+            <input required="" placeholder="" name="fname" type="text" class="input">
+            <span>first name</span>
+        </label>
+
+        <label>
+            <input required="" placeholder="" type="text" name="lname" class="input">
+            <span>last name</span>
+        </label>
+    </div>  
+            
+    <label>
+        <input required="" placeholder="" type="email" class="input" name="email">
+        <span>email</span>
+    </label> 
+        
+    <label>
+        <input required="" type="tel" placeholder="" class="input" name="number">
+        <span>contact number</span>
+    </label>
+    <label>
+        <textarea required="" rows="3" placeholder="" class="input01"name="message"></textarea>
+        <span>message</span>
+    </label>
+    
+    <button class="fancy" href="#" type="submit" name="btn-button">
+      <span class="top-key"></span>
+      <span class="text">submit</span>
+      <span class="bottom-key-1"></span>
+      <span class="bottom-key-2"></span>
+    </button>
+</form>
+</center>
+</div>
+ </div>
+<div class="container-xxl" style="background-color: black;color: white;">
+  <div class="row">
+    <div class="col" style="text-align: center;">
+      <br><br><br><br><br>
+      <p>123 Main street,city,country</p>
+      <p>phone: +123 456 7890</p>
+      <p>Email:xyz@gmail.com</p>
+    </div>
+    <div class="col order-5">    
+      <div class="form-container">
+        <div class="form"> 
+            <span class="heading">Get in touch</span>
+            <form class="form" method="POST" action="{% url 'foo' %}">
+              {% csrf_token %}
+     <input placeholder="Name" type="text" class="input" name="name">
+     <input placeholder="Email" id="mail" type="email" class="input" name="email">
+     <textarea placeholder="Say Hello" rows="10" cols="30" id="message" class="textarea" name="hello"></textarea>
+     <div class="button-container">
+     <div>
+      <button class="send-button" type="submit" href="#" name="btn_submit">Send</button>
+     </div>
+     <div>
+        <div class="reset-button-container">
+          <button  class="reset-button" type="Reset" href="#" id="reset-btn" name="reset-button">Reset</button>
+        </div>
+      </div>
+    </div>
+           </form>
+  </div>
+  </div>
+      </div>
+      
+    </div>
+  <p>2023 Inc, All rights are reserved.</p>
+</div>
+</body>
+</html>
